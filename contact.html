@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<!--CDN -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		// select all desired input fields and attach tooltips to them
+    $(document).ready(function(){
+    	 //Jquery Tool tip function highlights the Title section of Form
+         $("#myform :input").tooltip({
+            placement:"right",  //Tooltip will be populated to the right
+
+         });
+         //Send button function
+         $("button").click(function(){
+            self.close(); //While clicking on Send window will get closed.
+         });
+     });  
+	</script>	
+	<style type="text/css">	
+		form{
+			line-height: 3;
+		}
+		label{
+            margin: 4px 0px 2px 0px;
+            /*float: left;*/
+            width: 10%;
+            display: inline-block;
+        }
+        input, select{
+
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 10pt;
+            margin: 2px 0px 2px 0px;
+            padding-left: 5px;
+            height: 20px;
+            width: -webkit-calc(100% - 20px - 110px);
+            width: calc(50% - 20px - 110px);   
+        }
+        #feedback{
+        	margin: auto;
+        	padding: 1% 15%;
+        }
+        /* Tool tip CSS*/
+        .tooltip{
+        	border-left: 5px solid red;
+        }
+
+	</style>
+</head>
+<body>
+    <div id="container" style="border: 2px solid;background: linear-gradient(to top, grey , lightgrey);">
+	<form id="myform" action="#">
+
+		<h3 style="padding-left: 20%">Complaint Request</h3>
+
+		<div id="feedback">
+
+			<label for="username">Name</label>
+			<input type="text" name="username" id="username" title="Your good name.">
+			<br>
+
+			<label for="email">EmailID</label>
+			<input type="text" name="email" id="email" title="Your EmailID.">
+			<br>
+
+            <label for="dropdown">Select one</label>
+            <select id="dropdown" title="Select one of these options" >
+               <option>-- General Enquiry --</option>
+               <option>-- Job opening --</option>
+               <option>-- others --</option>
+            </select>  
+            <br>
+
+			<label for="message">Comments</label>
+			<textarea id="message" title="Should not exceed 200 Characters." style="height: 50px;width: 500px"></textarea> 
+			<br>
+
+			
+
+               <input type="checkbox" id="check" title="Required to proceed" style="width: 30px">
+                I accept the terms and conditions.
+        
+ 
+            <p>
+            <button type="button" title="Press to submit.">
+            Send
+            </button>
+            </p>
+
+
+			
+		</div>
+	 </div>	
+
+	</form>
+
+</body>
+</html>
